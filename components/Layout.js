@@ -1,0 +1,13 @@
+import Head from 'next/head'
+
+export default function Layout(props){
+    return (
+        <div>
+            <Head>
+                <title>{props.title}</title>
+                <link rel="icon" href="https://parsinta.com/favicons/favicon-16x16.png?v=vMgGe8RqKr"/>
+            </Head>
+            {props.children}
+        </div>
+    )
+}
