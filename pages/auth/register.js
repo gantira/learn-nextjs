@@ -1,7 +1,11 @@
-export default function Register() {
+import Layout from "../../components/Layout";
+
+export default function Login() {
     return (
-        <div>
-            Register
-        </div>
+        <Layout title="Register">
+            <div className="container">
+                Register
+            </div>
+        </Layout>
     )
 }
