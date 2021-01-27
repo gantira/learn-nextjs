@@ -13,6 +13,9 @@ export default function Navbar() {
                         </Link>
                     </div>
                     <div className="flex items-center">
+                        <Link href="/posts">
+                            <a className="text-blue-200 hover:text-white py-5 px-3">Posts</a>
+                        </Link>
                         <Link href="/about">
                             <a className="text-blue-200 hover:text-white py-5 px-3">About</a>
                         </Link>
