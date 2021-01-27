@@ -1,19 +1,25 @@
-import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
+import Link from "next/link";
 import Layout from "../../components/Layout";
 
 export default function Index({ posts }) {
     return (
         <Layout title="Index">
             <div className="container">
-                {posts.map((post) => {
-                    return (
-                        <div key={post.id} >
-                            {post.title}
-                        </div>
-                    )
-                })}
+                <div className="flex">
+                    <div className="w-1/2">
+                        {posts.map((post) => {
+                            return (
+                                <Link href={`/posts/${post.slug}`} key={post.id}>
+                                    <a className="block hover:bg-blue-500 hover:text-white border p-4 rounded-lg mb-5" >
+                                        {post.title}
+                                    </a>
+                                </Link>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
-        </Layout>
+        </Layout >
     )
 }
 
