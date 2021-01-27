@@ -1,10 +1,7 @@
-import { useRouter } from "next/router";
-import Layout from "../../components/Layout";
-import BlogPost from "../../components/BlogPost";
+import Layout from "../../../components/Layout";
+import BlogPost from "../../../components/BlogPost";
 
 export default function Index({ posts }) {
-    const router = useRouter()
-
     return (
         <Layout title="Index">
             <div className="container">
@@ -18,8 +15,8 @@ export default function Index({ posts }) {
     )
 }
 
-export const getServerSideProps = async ({ query: { page = 1 } }) => {
-    const response = await fetch(`http://localhost:8000/api/posts?page=${page}`)
+export const getServerSideProps = async ({ params }) => {
+    const response = await fetch(`http://localhost:8000/api/posts?page=${params.page}`)
     const posts = await response.json()
 
     return {
